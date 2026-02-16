@@ -1,0 +1,64 @@
+
+> physical-ai-textbook@0.0.0 build
+> docusaurus build
+
+[WARNING] The `siteConfig.onBrokenMarkdownLinks` config option is deprecated and will be removed in Docusaurus v4.
+Please migrate and move this option to `siteConfig.markdown.hooks.onBrokenMarkdownLinks` instead.
+[INFO] [en] Creating an optimized production build...
+[WARNING] The `siteConfig.onBrokenMarkdownLinks` config option is deprecated and will be removed in Docusaurus v4.
+Please migrate and move this option to `siteConfig.markdown.hooks.onBrokenMarkdownLinks` instead.
+[ERROR] Loading of version failed for version current
+
+[ERROR] Error: Unable to build website for locale en.
+    at tryToBuildLocale (C:\artificial_intelligence\piaic_panaviersty\projects_start\hackataon_1\node_modules\@docusaurus\core\lib\commands\build\build.js:83:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async C:\artificial_intelligence\piaic_panaviersty\projects_start\hackataon_1\node_modules\@docusaurus\core\lib\commands\build\build.js:35:9
+    at async mapAsyncSequential (C:\artificial_intelligence\piaic_panaviersty\projects_start\hackataon_1\node_modules\@docusaurus\utils\lib\jsUtils.js:21:24)
+    at async Command.build (C:\artificial_intelligence\piaic_panaviersty\projects_start\hackataon_1\node_modules\@docusaurus\core\lib\commands\build\build.js:34:5)
+    at async Promise.all (index 0)
+    at async runCLI (C:\artificial_intelligence\piaic_panaviersty\projects_start\hackataon_1\node_modules\@docusaurus\core\lib\commands\cli.js:56:5)
+    at async file:///C:/artificial_intelligence/piaic_panaviersty/projects_start/hackataon_1/node_modules/@docusaurus/core/bin/docusaurus.mjs:44:3 {
+  [cause]: Error: Can't process doc metadata for doc at path path=C:\artificial_intelligence\piaic_panaviersty\projects_start\hackataon_1\docs\intro.md in version name=current
+      at processDocMetadata (C:\artificial_intelligence\piaic_panaviersty\projects_start\hackataon_1\node_modules\@docusaurus\plugin-content-docs\lib\docs.js:152:15)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Promise.all (index 0)
+      ... 3 lines matching cause stack trace ...
+      at async Promise.all (index 0)
+      at async Object.loadContent (C:\artificial_intelligence\piaic_panaviersty\projects_start\hackataon_1\node_modules\@docusaurus\plugin-content-docs\lib\index.js:152:33)
+      at async C:\artificial_intelligence\piaic_panaviersty\projects_start\hackataon_1\node_modules\@docusaurus\core\lib\server\plugins\plugins.js:40:23
+      at async Promise.all (index 1) {
+    [cause]: Error: An error occurred when trying to get the last update date
+        at getGitLastUpdate (C:\artificial_intelligence\piaic_panaviersty\projects_start\hackataon_1\node_modules\@docusaurus\utils\lib\lastUpdateUtils.js:46:19)
+        at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+        at async readLastUpdateData (C:\artificial_intelligence\piaic_panaviersty\projects_start\hackataon_1\node_modules\@docusaurus\utils\lib\lastUpdateUtils.js:99:36)
+        at async doProcessDocMetadata (C:\artificial_intelligence\piaic_panaviersty\projects_start\hackataon_1\node_modules\@docusaurus\plugin-content-docs\lib\docs.js:53:24)
+        at async processDocMetadata (C:\artificial_intelligence\piaic_panaviersty\projects_start\hackataon_1\node_modules\@docusaurus\plugin-content-docs\lib\docs.js:149:16)
+        at async Promise.all (index 0)
+        at async loadVersionDocsBase (C:\artificial_intelligence\piaic_panaviersty\projects_start\hackataon_1\node_modules\@docusaurus\plugin-content-docs\lib\versions\loadVersion.js:63:18)
+        at async doLoadVersion (C:\artificial_intelligence\piaic_panaviersty\projects_start\hackataon_1\node_modules\@docusaurus\plugin-content-docs\lib\versions\loadVersion.js:72:22)
+        at async loadVersion (C:\artificial_intelligence\piaic_panaviersty\projects_start\hackataon_1\node_modules\@docusaurus\plugin-content-docs\lib\versions\loadVersion.js:119:16)
+        at async Promise.all (index 0) {
+      [cause]: Error: Command failed with exit code 128: git -c log.showSignature=false log --format=RESULT:%ct,%an --max-count=1 -- "intro.md"
+      fatal: not a git repository (or any of the parent directories): .git
+          at makeError (C:\artificial_intelligence\piaic_panaviersty\projects_start\hackataon_1\node_modules\execa\lib\error.js:60:11)
+          at handlePromise (C:\artificial_intelligence\piaic_panaviersty\projects_start\hackataon_1\node_modules\execa\index.js:118:26)
+          at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+          at async run (C:\artificial_intelligence\piaic_panaviersty\projects_start\hackataon_1\node_modules\p-queue\dist\index.js:163:29) {
+        shortMessage: 'Command failed with exit code 128: git -c log.showSignature=false log --format=RESULT:%ct,%an --max-count=1 -- "intro.md"',
+        command: 'git -c log.showSignature=false log --format=RESULT:%ct,%an --max-count=1 -- "intro.md"',
+        escapedCommand: '"git -c log.showSignature=false log --format=RESULT:%ct,%an --max-count=1 -- \\"intro.md\\""',
+        exitCode: 128,
+        signal: undefined,
+        signalDescription: undefined,
+        stdout: '',
+        stderr: 'fatal: not a git repository (or any of the parent directories): .git',
+        failed: true,
+        timedOut: false,
+        isCanceled: false,
+        killed: false
+      }
+    }
+  }
+}
+[INFO] Docusaurus version: 3.9.2
+Node version: v20.20.0
