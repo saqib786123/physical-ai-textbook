@@ -8,6 +8,7 @@ const path = require('path');
 const fs = require('fs');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const mongoose = require('mongoose');
 
 // Load environment variables
 dotenv.config(); // Load .env if it exists
@@ -27,12 +28,26 @@ app.use(express.json());
 const PORT = process.env.PORT || 3001;
 const JWT_SECRET = process.env.JWT_SECRET || 'hackathon-secret-key-2026';
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
-const USERS_FILE = path.join(__dirname, 'users.json');
 
-// Initialize users file if not exists
-if (!fs.existsSync(USERS_FILE)) {
-    fs.writeFileSync(USERS_FILE, JSON.stringify([]));
+// --- MongoDB Connection & User Model ---
+const MONGODB_URI = process.env.MONGODB_URI;
+
+if (MONGODB_URI) {
+    mongoose.connect(MONGODB_URI)
+        .then(() => console.log("✅ MongoDB connected successfully"))
+        .catch(err => console.error("❌ MongoDB connection error:", err));
+} else {
+    console.log("⚠️  Warning: MONGODB_URI not found. User accounts will be temporary.");
 }
+
+const userSchema = new mongoose.Schema({
+    username: { type: String, required: true },
+    email: { type: String, required: true, unique: true },
+    password: { type: String, required: true },
+    createdAt: { type: Date, default: Date.now }
+});
+
+const User = mongoose.model('User', userSchema);
 
 let vectorStore = null;
 
@@ -64,16 +79,14 @@ async function initVectorStore() {
 app.post('/auth/signup', async (req, res) => {
     try {
         const { username, email, password } = req.body;
-        const users = JSON.parse(fs.readFileSync(USERS_FILE));
 
-        if (users.find(u => u.email === email)) {
+        if (await User.findOne({ email })) {
             return res.status(400).json({ message: 'User already exists' });
         }
 
         const hashedPassword = await bcrypt.hash(password, 10);
-        const newUser = { id: Date.now(), username, email, password: hashedPassword };
-        users.push(newUser);
-        fs.writeFileSync(USERS_FILE, JSON.stringify(users));
+        const newUser = new User({ username, email, password: hashedPassword });
+        await newUser.save();
 
         res.status(201).json({ message: 'User created successfully' });
     } catch (error) {
@@ -84,14 +97,13 @@ app.post('/auth/signup', async (req, res) => {
 app.post('/auth/signin', async (req, res) => {
     try {
         const { email, password } = req.body;
-        const users = JSON.parse(fs.readFileSync(USERS_FILE));
-        const user = users.find(u => u.email === email);
+        const user = await User.findOne({ email });
 
         if (!user || !(await bcrypt.compare(password, user.password))) {
             return res.status(401).json({ message: 'Invalid credentials' });
         }
 
-        const token = jwt.sign({ id: user.id, username: user.username }, JWT_SECRET, { expiresIn: '24h' });
+        const token = jwt.sign({ id: user._id, username: user.username }, JWT_SECRET, { expiresIn: '24h' });
         res.json({ token, username: user.username });
     } catch (error) {
         res.status(500).json({ message: 'Signin error', error: error.message });
@@ -101,11 +113,9 @@ app.post('/auth/signin', async (req, res) => {
 app.post('/auth/forgot', async (req, res) => {
     try {
         const { email } = req.body;
-        const users = JSON.parse(fs.readFileSync(USERS_FILE));
-        const user = users.find(u => u.email === email);
+        const user = await User.findOne({ email });
 
         if (!user) {
-            // Security best practice: don't reveal if user exists, but for hackathon we can be explicit
             return res.status(404).json({ message: 'Email not found' });
         }
 
