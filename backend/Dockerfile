@@ -8,9 +8,9 @@ RUN npm install
 
 COPY . .
 
-# Hugging Face Spaces usually runs on port 7860
-EXPOSE 7860
+# Koyeb usually prefers port 8000 or the PORT env var
+EXPOSE 8000
 
-ENV PORT=7860
+ENV PORT=8000
 
 CMD [ "node", "server.js" ]
