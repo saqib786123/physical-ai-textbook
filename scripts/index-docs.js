@@ -7,7 +7,7 @@ const { FaissStore } = require("@langchain/community/vectorstores/faiss");
 require('dotenv').config();
 
 const DOCS_DIR = path.join(process.cwd(), 'docs');
-const OUTPUT_DIR = path.join(process.cwd(), 'static', 'vector-store');
+const OUTPUT_DIR = path.join(process.cwd(), 'backend', 'vector-store');
 
 if (!process.env.OPENAI_API_KEY) {
     console.error("❌ ERROR: OPENAI_API_KEY is not defined in .env file.");

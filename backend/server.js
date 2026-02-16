@@ -23,7 +23,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 const JWT_SECRET = process.env.JWT_SECRET || 'hackathon-secret-key-2026';
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 const USERS_FILE = path.join(__dirname, 'users.json');
@@ -37,7 +37,7 @@ let vectorStore = null;
 
 async function initVectorStore() {
     try {
-        const vectorStorePath = path.join(__dirname, '../static/vector-store');
+        const vectorStorePath = path.join(__dirname, 'vector-store');
         const indexPath = path.join(vectorStorePath, 'faiss.index');
         console.log("Checking vector store at: " + vectorStorePath);
 

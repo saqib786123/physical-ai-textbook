@@ -11,8 +11,8 @@ const config: Config = {
     v4: true,
   },
 
-  url: 'https://panaversity.github.io',
-  baseUrl: '/physical-ai-textbook/',
+  url: 'https://physical-ai-textbook-rqye.vercel.app',
+  baseUrl: '/',
 
   organizationName: 'panaversity',
   projectName: 'physical-ai-textbook',
