@@ -17,7 +17,7 @@ git push origin main
 5. Choose **Blank** template (or just create the space).
 6. Connect your GitHub repository.
 7. **Settings**:
-   - Ensure the **Dockerfile path** is `./backend/Dockerfile`.
+   - Ensure the **Dockerfile path** is `./hf-backend/Dockerfile`.
 8. **Variables & Secrets**:
    - Go to **Settings** > **Variables and secrets**.
    - **Secret**: `OPENAI_API_KEY` (Your OpenAI key).
