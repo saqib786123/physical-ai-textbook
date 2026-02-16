@@ -68,7 +68,7 @@ Advanced photorealistic simulation and synthetic data generation.
 Clone the textbook repository and install dependencies:
 
 ```bash
-git clone https://github.com/panaversity/physical-ai-textbook.git
+git clone https://github.com/saqib786123/physical-ai-textbook.git
 cd physical-ai-textbook
 
 # Install Frontend Dependencies

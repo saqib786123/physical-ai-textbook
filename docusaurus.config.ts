@@ -14,7 +14,7 @@ const config: Config = {
   url: 'https://physical-ai-textbook-rqye.vercel.app',
   baseUrl: '/',
 
-  organizationName: 'panaversity',
+  organizationName: 'saqib786123',
   projectName: 'physical-ai-textbook',
 
   onBrokenLinks: 'warn',
