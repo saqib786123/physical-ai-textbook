@@ -1,39 +1,43 @@
-# Deployment Guide: Physical AI Textbook (Netlify & Hugging Face)
+# 🚀 Simple & Best Deployment Guide
 
-Follow these steps to deploy your finalized bilingual textbook and AI backend.
+Follow these steps to deploy your Physical AI Textbook. This setup uses **Netlify** for the frontend and **Render** for the AI backend.
 
-## 1. Push Latest Changes to GitHub
+## 1. Push Code to GitHub
+Ensure your latest work is on GitHub:
 ```bash
 git add .
-git commit -m "Add Dockerfile for Hugging Face deployment"
+git commit -m "Simplify project structure and optimize for production"
 git push origin main
 ```
 
-## 2. Deploy RAG Backend (Hugging Face Spaces)
-1. Sign in to [Hugging Face](https://huggingface.co).
-2. Click **New** > **Space**.
-3. Name your Space (e.g., `physical-ai-backend`).
-4. Select **Docker** as the Space SDK.
-5. Choose **Blank** template (or just create the space).
-6. Connect your GitHub repository.
-7. **Settings**:
-   - Ensure the **Dockerfile path** is `./hf-backend/Dockerfile`.
-8. **Variables & Secrets**:
-   - Go to **Settings** > **Variables and secrets**.
-   - **Secret**: `OPENAI_API_KEY` (Your OpenAI key).
-   - **Secret**: `JWT_SECRET` (Your random string).
-9. Hugging Face will build the Docker image and start the server on port 7860.
-10. Your URL will be: `https://YOUR_USERNAME-YOUR_SPACE_NAME.hf.space` (e.g., `https://saqib786123-physical-ai-backend.hf.space`).
+## 2. Deploy AI Backend (Render)
+1. Sign in to [Render.com](https://render.com).
+2. Create a **New Web Service**.
+3. Connect your GitHub repository.
+5. **Settings**:
+   - **Root Directory**: `backend`
+   - **Build Command**: `npm install`
+   - **Start Command**: `npm start`
+6. **Environment Variables**:
+   - `OPENAI_API_KEY`: Paste your OpenAI key.
+   - `JWT_SECRET`: Paste your secret string.
+7. Copy your live backend URL (e.g., `https://physical-ai-backend.onrender.com`).
 
 ## 3. Deploy Frontend (Netlify)
 1. Sign in to [Netlify.com](https://netlify.com).
-2. Connect to GitHub and select your repository.
-3. **Environment Variables**:
-   - `NEXT_PUBLIC_API_URL`: Paste your **Hugging Face Space URL** here.
-4. Click **Deploy site**.
+2. **Add new site** > **Import from GitHub**.
+3. Select your repository.
+4. **Site Settings**:
+   - **Build command**: `npm run build`
+   - **Publish directory**: `build`
+5. **Environment Variables**:
+   - `NEXT_PUBLIC_API_URL`: Paste your **Render Backend URL** (from Step 2).
+6. Click **Deploy site**.
 
-## 4. Final Verification
-- Visit your Netlify URL.
-- Try the Chatbot and Auth system.
+## ✅ Project Features Verified
+- **Bilingual Interface**: Seamless English/Urdu switching.
+- **RAG Chatbot**: AI answers questions based on textbook chapters.
+- **User Auth**: Secure Signup/Signin with personalized greetings.
+- **Modern Design**: Glassmorphic, dark-themed UI.
 
-**Note**: Hugging Face Spaces can "sleep" if not used for a while. The first request after a long time might take a few seconds to wake up the server.
+**Your Physical AI project is now fully optimized and ready for students!**

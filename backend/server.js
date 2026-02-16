@@ -10,13 +10,14 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 // Load environment variables
+dotenv.config(); // Load .env if it exists
 try {
+    // Also try to load from parent dir for local dev convenience
     dotenv.config({ path: path.join(__dirname, '../.env.local') });
-    if (!process.env.OPENAI_API_KEY) {
-        dotenv.config({ path: path.join(__dirname, '../.env') });
-    }
-} catch (e) {
-    console.log("Dotenv config loading warning: " + e.message);
+} catch (e) { }
+
+if (!process.env.OPENAI_API_KEY) {
+    console.log("⚠️  Warning: OPENAI_API_KEY not found in environment.");
 }
 
 const app = express();
