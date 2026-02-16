@@ -1,0 +1,46 @@
+{
+  "version.label": {
+    "message": "اگلا",
+    "description": "The label for version current"
+  },
+  "sidebar.bookSidebar.category.🌍 Foundations of Physical AI": {
+    "message": "🌍 فزیکل اے آئی کی بنیادیں",
+    "description": "The label for category '🌍 Foundations of Physical AI' in sidebar 'bookSidebar'"
+  },
+  "sidebar.bookSidebar.category.🧬 Module 1: The Robotic Nervous System (ROS 2)": {
+    "message": "🧬 ماڈیول 1: روبوٹک اعصابی نظام (ROS 2)",
+    "description": "The label for category '🧬 Module 1: The Robotic Nervous System (ROS 2)' in sidebar 'bookSidebar'"
+  },
+  "sidebar.bookSidebar.category.🌐 Module 2: The Digital Twin (Gazebo & Unity)": {
+    "message": "🌐 ماڈیول 2: ڈیجیٹل ٹوئن (Gazebo اور Unity)",
+    "description": "The label for category '🌐 Module 2: The Digital Twin (Gazebo & Unity)' in sidebar 'bookSidebar'"
+  },
+  "sidebar.bookSidebar.category.🧠 Module 3: The AI-Robot Brain (NVIDIA Isaac™)": {
+    "message": "🧠 ماڈیول 3: اے آئی روبوٹ دماغ (NVIDIA Isaac™)",
+    "description": "The label for category '🧠 Module 3: The AI-Robot Brain (NVIDIA Isaac™)' in sidebar 'bookSidebar'"
+  },
+  "sidebar.bookSidebar.category.🔮 Module 4: Vision-Language-Action (VLA)": {
+    "message": "🔮 ماڈیول 4: ویژن-لینگویج-ایکشن (VLA)",
+    "description": "The label for category '🔮 Module 4: Vision-Language-Action (VLA)' in sidebar 'bookSidebar'"
+  },
+  "sidebar.bookSidebar.category.🦾 Humanoid Development": {
+    "message": "🦾 ہیومنائیڈ ڈویلپمنٹ",
+    "description": "The label for category '🦾 Humanoid Development' in sidebar 'bookSidebar'"
+  },
+  "sidebar.bookSidebar.category.🎯 Capstone Project": {
+    "message": "🎯 کیپ اسٹون پروجیکٹ",
+    "description": "The label for category '🎯 Capstone Project' in sidebar 'bookSidebar'"
+  },
+  "sidebar.bookSidebar.category.📎 Appendices": {
+    "message": "📎 ضمیمہ جات",
+    "description": "The label for category '📎 Appendices' in sidebar 'bookSidebar'"
+  },
+  "sidebar.bookSidebar.doc.📘 Introduction to Physical AI": {
+    "message": "📘 فزیکل اے آئی کا تعارف",
+    "description": "The label for the doc item '📘 Introduction to Physical AI' in sidebar 'bookSidebar', linking to the doc intro"
+  },
+  "sidebar.bookSidebar.doc.🛠️ Setup Your Lab": {
+    "message": "🛠️ اپنی لیب سیٹ اپ کریں",
+    "description": "The label for the doc item '🛠️ Setup Your Lab' in sidebar 'bookSidebar', linking to the doc setup-your-lab"
+  }
+}

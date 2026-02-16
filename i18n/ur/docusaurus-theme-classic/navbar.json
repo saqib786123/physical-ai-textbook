@@ -1,0 +1,38 @@
+{
+  "title": {
+    "message": "فزیکل اے آئی",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "فزیکل اے آئی لوگو",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.📖 Textbook": {
+    "message": "📖 نصابی کتاب",
+    "description": "Navbar item with label 📖 Textbook"
+  },
+  "item.label.🧬 Module 1: ROS 2": {
+    "message": "🧬 ماڈیول 1: ROS 2",
+    "description": "Navbar item with label 🧬 Module 1: ROS 2"
+  },
+  "item.label.🌐 Module 2: Simulation": {
+    "message": "🌐 ماڈیول 2: سیمولیشن",
+    "description": "Navbar item with label 🌐 Module 2: Simulation"
+  },
+  "item.label.🧠 Module 3: Isaac": {
+    "message": "🧠 ماڈیول 3: ائزک",
+    "description": "Navbar item with label 🧠 Module 3: Isaac"
+  },
+  "item.label.🗣️ Module 4: VLA": {
+    "message": "🗣️ ماڈیول 4: VLA",
+    "description": "Navbar item with label 🗣️ Module 4: VLA"
+  },
+  "item.label.Panaversity": {
+    "message": "پیناوورسٹی",
+    "description": "Navbar item with label Panaversity"
+  },
+  "item.label.GitHub": {
+    "message": "گٹ ہب",
+    "description": "Navbar item with label GitHub"
+  }
+}

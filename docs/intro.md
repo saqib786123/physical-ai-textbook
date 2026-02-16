@@ -9,7 +9,7 @@ keywords: [physical AI, humanoid robotics, embodied intelligence, ROS 2, robotic
 
 > *"The future of AI extends beyond digital spaces into the physical world."*
 
-Welcome to **Physical AI & Humanoid Robotics** — a comprehensive textbook designed to take you from understanding the foundations of embodied intelligence to building autonomous humanoid robots that can see, hear, think, and act in the real world.
+Welcome to **Physical AI & Humanoid Robotics** — a comprehensive textbook by **Muhammad Saqib**, designed to take you from understanding the foundations of embodied intelligence to building autonomous humanoid robots that can see, hear, think, and act in the real world.
 
 ## What is Physical AI?
 

@@ -1,6 +1,7 @@
-# Website
+# Physical AI & Humanoid Robotics Textbook
+**Author: Muhammad Saqib**
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator for Panaversity.
 
 ## Installation
 

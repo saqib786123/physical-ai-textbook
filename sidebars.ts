@@ -8,6 +8,11 @@ const sidebars: SidebarsConfig = {
       label: '📘 Introduction to Physical AI',
     },
     {
+      type: 'doc',
+      id: 'setup-your-lab',
+      label: '🛠️ Setup Your Lab',
+    },
+    {
       type: 'category',
       label: '🌍 Foundations of Physical AI',
       collapsed: false,

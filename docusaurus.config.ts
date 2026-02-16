@@ -22,7 +22,17 @@ const config: Config = {
 
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en', 'ur'],
+    localeConfigs: {
+      en: {
+        label: 'English',
+        direction: 'ltr',
+      },
+      ur: {
+        label: 'اردو (Urdu)',
+        direction: 'rtl',
+      },
+    },
   },
 
   presets: [
@@ -57,6 +67,7 @@ const config: Config = {
     metadata: [
       { name: 'keywords', content: 'physical AI, humanoid robotics, ROS 2, Gazebo, NVIDIA Isaac, embodied intelligence, robotics textbook' },
       { name: 'description', content: 'A comprehensive textbook for teaching Physical AI & Humanoid Robotics - covering ROS 2, Gazebo, NVIDIA Isaac, and Vision-Language-Action models.' },
+      { name: 'author', content: 'Muhammad Saqib' },
     ],
     colorMode: {
       defaultMode: 'dark',
@@ -64,7 +75,7 @@ const config: Config = {
     },
     announcementBar: {
       id: 'panaversity_launch',
-      content: '🤖 <strong>Physical AI & Humanoid Robotics</strong> — An AI-Native Textbook by <a href="https://panaversity.org" target="_blank">Panaversity</a>',
+      content: '🤖 <strong>Physical AI & Humanoid Robotics</strong> — An AI-Native Textbook by <strong>Muhammad Saqib</strong> @ <a href="https://panaversity.org" target="_blank">Panaversity</a>',
       backgroundColor: '#0a0a1a',
       textColor: '#00d4ff',
       isCloseable: true,
@@ -109,6 +120,10 @@ const config: Config = {
           position: 'right',
         },
         {
+          type: 'localeDropdown',
+          position: 'right',
+        },
+        {
           href: 'https://github.com/panaversity/physical-ai-textbook',
           label: 'GitHub',
           position: 'right',
@@ -147,7 +162,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Panaversity. Physical AI & Humanoid Robotics Textbook. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Muhammad Saqib. Physical AI & Humanoid Robotics Textbook. Built with Docusaurus for Panaversity.`,
     },
     prism: {
       theme: prismThemes.github,
@@ -159,6 +174,11 @@ const config: Config = {
       maxHeadingLevel: 4,
     },
   } satisfies Preset.ThemeConfig,
+
+  customFields: {
+    backendUrl: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001',
+    authorName: 'Muhammad Saqib',
+  },
 };
 
 export default config;
