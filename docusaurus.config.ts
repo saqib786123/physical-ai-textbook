@@ -42,7 +42,7 @@ const config: Config = {
         docs: {
           sidebarPath: './sidebars.ts',
           editUrl:
-            'https://github.com/panaversity/physical-ai-textbook/tree/main/',
+            'https://github.com/saqib786123/physical-ai-textbook/tree/main/',
           showLastUpdateTime: true,
           breadcrumbs: true,
         },
@@ -53,7 +53,7 @@ const config: Config = {
             xslt: true,
           },
           editUrl:
-            'https://github.com/panaversity/physical-ai-textbook/tree/main/',
+            'https://github.com/saqib786123/physical-ai-textbook/tree/main/',
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -124,7 +124,7 @@ const config: Config = {
           position: 'right',
         },
         {
-          href: 'https://github.com/panaversity/physical-ai-textbook',
+          href: 'https://github.com/saqib786123/physical-ai-textbook',
           label: 'GitHub',
           position: 'right',
         },
@@ -158,7 +158,7 @@ const config: Config = {
             { label: 'ROS 2 Documentation', href: 'https://docs.ros.org/en/humble/' },
             { label: 'NVIDIA Isaac Sim', href: 'https://developer.nvidia.com/isaac-sim' },
             { label: 'Gazebo Sim', href: 'https://gazebosim.org/' },
-            { label: 'GitHub Repository', href: 'https://github.com/panaversity/physical-ai-textbook' },
+            { label: 'GitHub Repository', href: 'https://github.com/saqib786123/physical-ai-textbook' },
           ],
         },
       ],
