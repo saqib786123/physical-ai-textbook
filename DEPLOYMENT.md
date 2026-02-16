@@ -1,43 +1,39 @@
-# Deployment Guide: Physical AI Textbook (Netlify & Railway)
+# Deployment Guide: Physical AI Textbook (Netlify & Hugging Face)
 
-Follow these steps to deploy your finalized bilingual textbook and AI backend using Netlify and Railway.
+Follow these steps to deploy your finalized bilingual textbook and AI backend.
 
 ## 1. Push Latest Changes to GitHub
-Ensure all your latest configuration changes are pushed:
 ```bash
 git add .
-git commit -m "Update deployment config for Netlify and Railway"
+git commit -m "Add Dockerfile for Hugging Face deployment"
 git push origin main
 ```
 
-## 2. Deploy RAG Backend (Railway)
-1. Sign in to [Railway.app](https://railway.app).
-2. Click **New Project** > **Deploy from GitHub repo**.
-3. Select your `physical-ai-textbook` repository.
-4. Railway will detect the folders. Click on **Settings** for the service.
-5. **Root Directory**: Set this to `backend`.
-6. **Environment Variables**:
-   - `OPENAI_API_KEY`: Your OpenAI Secret Key.
-   - `JWT_SECRET`: A long random string for auth.
-   - `PORT`: `3001` (Or let Railway assign one, but 3001 is set in our code).
-7. Railway will provide a public URL (e.g., `https://backend-production-xxxx.up.railway.app`). Copy this URL.
+## 2. Deploy RAG Backend (Hugging Face Spaces)
+1. Sign in to [Hugging Face](https://huggingface.co).
+2. Click **New** > **Space**.
+3. Name your Space (e.g., `physical-ai-backend`).
+4. Select **Docker** as the Space SDK.
+5. Choose **Blank** template (or just create the space).
+6. Connect your GitHub repository.
+7. **Settings**:
+   - Ensure the **Dockerfile path** is `./backend/Dockerfile`.
+8. **Variables & Secrets**:
+   - Go to **Settings** > **Variables and secrets**.
+   - **Secret**: `OPENAI_API_KEY` (Your OpenAI key).
+   - **Secret**: `JWT_SECRET` (Your random string).
+9. Hugging Face will build the Docker image and start the server on port 7860.
+10. Your URL will be: `https://YOUR_USERNAME-YOUR_SPACE_NAME.hf.space` (e.g., `https://saqib786123-physical-ai-backend.hf.space`).
 
 ## 3. Deploy Frontend (Netlify)
 1. Sign in to [Netlify.com](https://netlify.com).
-2. Click **Add new site** > **Import an existing project**.
-3. Connect to GitHub and select the `physical-ai-textbook` repository.
-4. **Site Settings**:
-   - **Base directory**: (Leave empty, use root)
-   - **Build command**: `npm run build`
-   - **Publish directory**: `build`
-5. **Environment Variables**:
-   - `NEXT_PUBLIC_API_URL`: Paste your **Railway Backend URL** here.
-6. Click **Deploy site**.
+2. Connect to GitHub and select your repository.
+3. **Environment Variables**:
+   - `NEXT_PUBLIC_API_URL`: Paste your **Hugging Face Space URL** here.
+4. Click **Deploy site**.
 
 ## 4. Final Verification
-- Visit your Netlify URL (e.g., `https://physical-ai-textbook.netlify.app`).
-- Try to Sign Up / Sign In.
-- Ask the Chatbot a question in English.
-- Switch to Urdu and ask a question in Urdu.
+- Visit your Netlify URL.
+- Try the Chatbot and Auth system.
 
-**Congratulations! Your Physical AI platform is live on the modern stack.**
+**Note**: Hugging Face Spaces can "sleep" if not used for a while. The first request after a long time might take a few seconds to wake up the server.
