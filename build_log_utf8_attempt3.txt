@@ -1,0 +1,38 @@
+
+> physical-ai-textbook@0.0.0 build
+> docusaurus build
+
+[WARNING] The `siteConfig.onBrokenMarkdownLinks` config option is deprecated and will be removed in Docusaurus v4.
+Please migrate and move this option to `siteConfig.markdown.hooks.onBrokenMarkdownLinks` instead.
+[INFO] [en] Creating an optimized production build...
+[WARNING] The `siteConfig.onBrokenMarkdownLinks` config option is deprecated and will be removed in Docusaurus v4.
+Please migrate and move this option to `siteConfig.markdown.hooks.onBrokenMarkdownLinks` instead.
+[90m[[90mwebpackbar[90m][39m [36mℹ[39m Compiling Client
+[90m[[90mwebpackbar[90m][39m [36mℹ[39m Compiling Server
+[90m[[90mwebpackbar[90m][39m [32m✔[39m Server: Compiled successfully in 15.44s
+[90m[[90mwebpackbar[90m][39m [32m✔[39m Client: Compiled successfully in 19.90s
+
+[ERROR] Error: Unable to build website for locale en.
+    at tryToBuildLocale (C:\artificial_intelligence\piaic_panaviersty\projects_start\hackataon_1\node_modules\@docusaurus\core\lib\commands\build\build.js:83:15)
+    at async C:\artificial_intelligence\piaic_panaviersty\projects_start\hackataon_1\node_modules\@docusaurus\core\lib\commands\build\build.js:35:9
+    at async mapAsyncSequential (C:\artificial_intelligence\piaic_panaviersty\projects_start\hackataon_1\node_modules\@docusaurus\utils\lib\jsUtils.js:21:24)
+    at async Command.build (C:\artificial_intelligence\piaic_panaviersty\projects_start\hackataon_1\node_modules\@docusaurus\core\lib\commands\build\build.js:34:5)
+    at async Promise.all (index 0)
+    at async runCLI (C:\artificial_intelligence\piaic_panaviersty\projects_start\hackataon_1\node_modules\@docusaurus\core\lib\commands\cli.js:56:5)
+    at async file:///C:/artificial_intelligence/piaic_panaviersty/projects_start/hackataon_1/node_modules/@docusaurus/core/bin/docusaurus.mjs:44:3 {
+  [cause]: Error: Cannot find module './prism-xml'
+      at webpackContextResolve (server.bundle.js:23928:11)
+      at webpackContext (server.bundle.js:23923:11)
+      at server.bundle.js:18684:27
+      at Array.forEach (<anonymous>)
+      at prismIncludeLanguages (server.bundle.js:18682:85)
+      at 46725 (server.bundle.js:14136:87)
+      at __webpack_require__ (server.bundle.js:46266:42)
+      at 43586 (server.bundle.js:12623:121)
+      at __webpack_require__ (server.bundle.js:46266:42)
+      at 4607 (server.bundle.js:12660:83) {
+    code: 'MODULE_NOT_FOUND'
+  }
+}
+[INFO] Docusaurus version: 3.9.2
+Node version: v20.20.0

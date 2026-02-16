@@ -1,5 +1,5 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
+import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
@@ -55,8 +55,8 @@ const config: Config = {
   themeConfig: {
     image: 'img/social-card.png',
     metadata: [
-      {name: 'keywords', content: 'physical AI, humanoid robotics, ROS 2, Gazebo, NVIDIA Isaac, embodied intelligence, robotics textbook'},
-      {name: 'description', content: 'A comprehensive textbook for teaching Physical AI & Humanoid Robotics - covering ROS 2, Gazebo, NVIDIA Isaac, and Vision-Language-Action models.'},
+      { name: 'keywords', content: 'physical AI, humanoid robotics, ROS 2, Gazebo, NVIDIA Isaac, embodied intelligence, robotics textbook' },
+      { name: 'description', content: 'A comprehensive textbook for teaching Physical AI & Humanoid Robotics - covering ROS 2, Gazebo, NVIDIA Isaac, and Vision-Language-Action models.' },
     ],
     colorMode: {
       defaultMode: 'dark',
@@ -152,7 +152,7 @@ const config: Config = {
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
-      additionalLanguages: ['python', 'bash', 'yaml', 'xml', 'cmake', 'cpp'],
+      additionalLanguages: ['python', 'bash'],
     },
     tableOfContents: {
       minHeadingLevel: 2,
